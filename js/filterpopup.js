@@ -52,14 +52,13 @@ filterImage.addEventListener('click', hideTable);
 // Handle window resize
 window.addEventListener('resize', setInitialState);
 
-// Prevent closing the table when clicking outside
+// Prevent closing the table when clicking outside the buttons
 document.addEventListener('click', function(event) {
     if (isMobile() && 
         tableContainer.style.display === 'block' && 
-        !tableContainer.contains(event.target) && 
-        event.target !== applyFilterBtn && 
-        event.target !== filterImage) {
-        // Do nothing if clicked outside the table and buttons
+        !applyFilterBtn.contains(event.target) && 
+        !filterImage.contains(event.target)) {
+        // Do nothing if clicked outside the specific buttons
         return;
     }
 });
