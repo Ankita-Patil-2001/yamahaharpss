@@ -25,7 +25,7 @@ html {
 /* Sidebar base styles */
 .sidebar {
   width: 259px;
-  transition: width 0.3s ease;
+  
   position: relative;
 }
 
@@ -40,7 +40,6 @@ html {
   transform: translateY(-50%);
   background-color: white;
   padding: 10px;
-  transition: all 0.3s ease;
 }
 
 .sidebar:not(.closed) #sidebar-icon {
@@ -1088,16 +1087,18 @@ display: none;
 }
 .sidebar {
   width: 259px;
-  transition: width 0.3s ease;
   position: relative;
 }
 
 .sidebar.closed {
   width: 80px;
-  transition: width 0.3s ease;
 }
 .icon-row1{
   display: none;
+}
+#sidebar.closed {
+  transform: translateX(-10%); /* Move sidebar out of view */
+  transition: none; /* Remove animation during initial load */
 }
 
 

@@ -24,11 +24,13 @@ function showForm() {
     tableContainer.style.display = 'none';
 }
 
-// Function to hide table only
+// Function to hide table only (triggered by image)
 function hideTable() {
-    formElement.style.display = 'block';
-    statusSection.style.display = 'block';
-    tableContainer.style.display = 'none';
+    if (isMobile()) { // Only hide table if on mobile view
+        formElement.style.display = 'block';
+        statusSection.style.display = 'block';
+        tableContainer.style.display = 'none';
+    }
 }
 
 // Set initial state - Important: Always hide table on mobile initially
@@ -46,7 +48,7 @@ setInitialState();
 // Add click event listener to the Apply Filter button
 applyFilterBtn.addEventListener('click', showTable);
 
-// Add click event listener to the image to hide the table
+// Add click event listener to the image to hide the table (go back)
 filterImage.addEventListener('click', hideTable);
 
 // Handle window resize
@@ -58,7 +60,7 @@ document.addEventListener('click', function(event) {
         tableContainer.style.display === 'block' && 
         !applyFilterBtn.contains(event.target) && 
         !filterImage.contains(event.target)) {
-        // Do nothing if clicked outside the specific buttons
+        // Prevent any action if the click isn't on the apply button or image
         return;
     }
 });

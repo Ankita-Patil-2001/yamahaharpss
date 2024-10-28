@@ -8,63 +8,59 @@ document.addEventListener("DOMContentLoaded", function () {
   const submenuItems = document.querySelectorAll(".has-submenu");
   const tabs = document.querySelectorAll(".tabs2 .tab");
   const contents = document.querySelectorAll(".content");
-  const container1 = document.querySelector(".container1");
   const userIcon = document.querySelector(".mobile-user-icon");
   const mobileSidebar = document.querySelector(".mobile-sidebar");
   const overlay = document.querySelector(".mobile-overlay");
   const closeBtn = document.querySelector(".mobile-sidebar-close");
   const iconRow = document.querySelector(".icon-row");
 
-  // Function to toggle sidebar open/close
-  function setInitialSidebarIconPosition() {
-    const screenWidth = window.innerWidth; // Get current screen width
-    sidebar.classList.add("closed");
-    // Ensure icon is always on the left initially
-    sidebarIcon.style.left = "8px";
-    sidebarIcon.style.right = "auto"; // Reset right positioning
-    
-    if (sidebar.classList.contains("closed")) {
-      sidebarIcon.style.backgroundColor = "white";  // Set background for closed state
+  function applySidebarState() {
+    const sidebarState = localStorage.getItem("sidebarState") || "closed"; // Default to "closed"
+    if (sidebarState === "closed") {
+      sidebar.classList.add("closed");
     } else {
-      sidebarIcon.style.backgroundColor = "blue";  // Set background for open state
+      sidebar.classList.remove("closed");
+    }
+    setSidebarIconPosition();
+  }
+
+  // Store the current sidebar state in localStorage
+  function saveSidebarState() {
+    if (sidebar.classList.contains("closed")) {
+      localStorage.setItem("sidebarState", "closed");
+    } else {
+      localStorage.setItem("sidebarState", "open");
     }
   }
 
-  // Call the function initially to ensure correct positioning on load
-  setInitialSidebarIconPosition();
+  // Function to set sidebar icon position
+  function setSidebarIconPosition() {
+    if (sidebar.classList.contains("closed")) {
+      sidebarIcon.style.left = "8px"; // Keep icon on the left
+      sidebarIcon.style.backgroundColor = "white"; // Set closed state background
+    } else {
+      sidebarIcon.style.left = "8px"; // Icon always stays on the left
+      sidebarIcon.style.backgroundColor = "blue"; // Set open state background
+    }
+  }
 
   // Function to toggle sidebar open/close
   function toggleSidebar() {
-    const screenWidth = window.innerWidth; // Get the current screen width
-
     sidebar.classList.toggle("closed");
-
-    if (sidebar.classList.contains("closed")) {
-      // Sidebar is closed, always keep the icon on the left side with white background
-      sidebarIcon.style.left = "8px";  // Position the icon on the left
-      sidebarIcon.style.right = "auto"; // Reset right positioning
-      sidebarIcon.style.backgroundColor = "white"; // Background for closed state
-    } else {
-      // Sidebar is open
-      sidebarIcon.style.left = "8px";  // Always ensure it stays on the left
-      sidebarIcon.style.right = "auto";  // Reset right
-      sidebarIcon.style.backgroundColor = "blue";  // Blue background for open state
-    }
+    setSidebarIconPosition();
+    saveSidebarState(); // Save the current state whenever the sidebar is toggled
   }
 
-  // Sidebar toggle functionality for both button and sidebar-icon
+  // Add event listener to toggle sidebar on button or icon click
   toggleSidebarBtn.addEventListener("click", toggleSidebar);
-  sidebarIcon.addEventListener("click", toggleSidebar); // Added functionality for sidebar-icon
+  sidebarIcon.addEventListener("click", toggleSidebar);
 
-  // Re-check icon positioning and styling on window resize to be responsive
-  window.addEventListener("resize", setInitialSidebarIconPosition);
+  // Apply the saved state on load
+  applySidebarState();
 
+  // Recheck icon position on window resize
+  window.addEventListener("resize", setSidebarIconPosition);
 
-  
-  
-  // Sidebar toggle functionality for both button and sidebar-icon
-  toggleSidebarBtn.addEventListener("click", toggleSidebar);
-  sidebarIcon.addEventListener("click", toggleSidebar); // Added functionality for sidebar-icon
 
   // Master item toggle functionality
   masterItem.addEventListener("click", function (e) {
