@@ -14,53 +14,43 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.querySelector(".mobile-sidebar-close");
   const iconRow = document.querySelector(".icon-row");
 
-  function applySidebarState() {
-    const sidebarState = localStorage.getItem("sidebarState") || "closed"; // Default to "closed"
-    if (sidebarState === "closed") {
-      sidebar.classList.add("closed");
-    } else {
-      sidebar.classList.remove("closed");
-    }
-    setSidebarIconPosition();
-  }
+  // Function to set sidebar icon position on load
+  function setInitialSidebarIconPosition() {
+    sidebar.classList.add("closed"); // Ensure sidebar starts closed
+    sidebarIcon.style.left = "8px"; // Ensure icon is always on the left
+    sidebarIcon.style.right = "auto"; // Reset right positioning
 
-  // Store the current sidebar state in localStorage
-  function saveSidebarState() {
     if (sidebar.classList.contains("closed")) {
-      localStorage.setItem("sidebarState", "closed");
+      sidebarIcon.style.backgroundColor = "white"; // Set background for closed state
     } else {
-      localStorage.setItem("sidebarState", "open");
+      sidebarIcon.style.backgroundColor = "blue"; // Set background for open state
     }
   }
 
-  // Function to set sidebar icon position
-  function setSidebarIconPosition() {
-    if (sidebar.classList.contains("closed")) {
-      sidebarIcon.style.left = "8px"; // Keep icon on the left
-      sidebarIcon.style.backgroundColor = "white"; // Set closed state background
-    } else {
-      sidebarIcon.style.left = "8px"; // Icon always stays on the left
-      sidebarIcon.style.backgroundColor = "blue"; // Set open state background
-    }
-  }
+  // Call the function initially to ensure correct positioning on load
+  setInitialSidebarIconPosition();
 
   // Function to toggle sidebar open/close
   function toggleSidebar() {
     sidebar.classList.toggle("closed");
-    setSidebarIconPosition();
-    saveSidebarState(); // Save the current state whenever the sidebar is toggled
+
+    if (sidebar.classList.contains("closed")) {
+      sidebarIcon.style.left = "8px"; // Keep icon on the left
+      sidebarIcon.style.right = "auto"; // Reset right positioning
+      sidebarIcon.style.backgroundColor = "white"; // Background for closed state
+    } else {
+      sidebarIcon.style.left = "8px"; // Always ensure it stays on the left
+      sidebarIcon.style.right = "auto"; // Reset right
+      sidebarIcon.style.backgroundColor = "blue"; // Blue background for open state
+    }
   }
 
-  // Add event listener to toggle sidebar on button or icon click
+  // Sidebar toggle functionality for both button and sidebar-icon
   toggleSidebarBtn.addEventListener("click", toggleSidebar);
-  sidebarIcon.addEventListener("click", toggleSidebar);
+  sidebarIcon.addEventListener("click", toggleSidebar); // Added functionality for sidebar-icon
 
-  // Apply the saved state on load
-  applySidebarState();
-
-  // Recheck icon position on window resize
-  window.addEventListener("resize", setSidebarIconPosition);
-
+  // Re-check icon positioning and styling on window resize to be responsive
+  window.addEventListener("resize", setInitialSidebarIconPosition);
 
   // Master item toggle functionality
   masterItem.addEventListener("click", function (e) {

@@ -7,7 +7,6 @@
 body,
 html {
   font-family: "Lato", serif;
-  background-color: rgba(237, 244, 255, 0.6);
   backdrop-filter: blur(150px);
   background-image: url("./images/Rectangle\ Frosted.png");
   background-size: cover;
