@@ -1042,7 +1042,7 @@
 @media (min-width: 344px) and (max-width: 414px) {
   /* Center the text in the header */
   .header h1 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
     font-family: Lato, sans-serif;
     width: 100%; /* Ensure full width for centering */
@@ -1101,7 +1101,7 @@
 /* For 414px and above if needed */
 @media (min-width: 414px) {
   .header h1 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
     font-family: Lato, sans-serif;
     width: 100%; /* Ensure full width for centering */
