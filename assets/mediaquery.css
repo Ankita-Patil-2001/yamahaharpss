@@ -217,7 +217,7 @@
 
   .logo {
     margin-top: 10px;
-    margin-left: 50px;
+    margin-left: 60px;
     width: 40px; /* Adjust logo size */
     height: auto;
     transition: all 0.3s ease;
@@ -354,7 +354,7 @@
   #sidebar-icon {
     position: absolute;
     top: 50px;
-    left: 8px;
+    left: 15px;
     transform: translateY(-50%);
     background-color: white;
     padding: 10px;
@@ -1364,7 +1364,7 @@
   #sidebar-icon {
     position: absolute;
     top: 97.5%;
-    left: 8px;
+    left: 15px;
     transform: translateY(-50%);
     background-color: white;
     padding: 10px;
