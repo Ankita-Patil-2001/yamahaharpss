@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to set sidebar icon position on load
   function setInitialSidebarIconPosition() {
     sidebar.classList.add("closed"); // Ensure sidebar starts closed
-    sidebarIcon.style.left = "8px"; // Ensure icon is always on the left
+    sidebarIcon.style.left = "20px"; // Ensure icon is always on the left
     sidebarIcon.style.right = "auto"; // Reset right positioning
 
     if (sidebar.classList.contains("closed")) {

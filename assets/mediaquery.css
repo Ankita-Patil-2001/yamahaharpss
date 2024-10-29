@@ -1263,7 +1263,7 @@
     gap: 8px;
     align-items: center;
     margin-top: 20px;
-    margin-left: 290px;
+    margin-left: 280px;
   }
   #sidebar {
     width: 400px;
@@ -1362,14 +1362,18 @@
     width: 250px;
   }
   #sidebar-icon {
-    position: absolute;
+    position: relative;
     top: 97.5%;
-    left: 15px;
+    left: 15px; /* Should move to the left */
     transform: translateY(-50%);
     background-color: white;
     padding: 10px;
     transition: all 0.3s ease;
-  }
+    z-index: 1000; /* Ensure it’s on top if needed */
+}
+#sidebar-icon {
+  left: 15px !important;
+}
 
   #sidebar:not(.closed) #sidebar-icon {
     border-radius: 10%;
