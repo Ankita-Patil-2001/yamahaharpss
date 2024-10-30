@@ -1,7 +1,5 @@
 @media (min-width: 1024px) {
-  .container2 {
-    height: 850px;
-  }
+  
   td {
     height: 60px;
   }
@@ -19,6 +17,9 @@
   }
   #master.active .ffff {
     width: 250px;
+  }
+  .container{
+    height: 57%;
   }
 }
 
@@ -86,12 +87,12 @@
     font-size: 18px;
   }
   .status2 input[type="radio"] {
-    appearance: none; /* Remove default radio button */
-    width: 25px; /* Adjust the size */
-    height: 25px; /* Adjust the size */
-    border-radius: 50%; /* Make it circular */
-    border: 2px solid white; /* White border */
-    outline: none; /* Remove the focus outline that causes blur */
+    appearance: none; 
+    width: 25px; 
+    height: 25px;
+    border-radius: 50%; 
+    border: 2px solid white; 
+    outline: none; 
     margin-right: 7px;
     background-color: transparent;
     cursor: pointer;
@@ -100,8 +101,8 @@
   }
   .status2 input[type="radio"]:checked::before {
     content: "";
-    width: 10px; /* Inner circle size */
-    height: 10px; /* Inner circle size */
+    width: 10px; 
+    height: 10px; 
     background-color: white;
     position: absolute;
     top: 50%;
@@ -160,51 +161,44 @@
 
 @media (max-width: 768px) {
   #sidebar {
-    position: fixed; /* Fixed position to overlay */
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 320px; /* Full width for sidebar when open */
-    height: 100%; /* Full height */
+    width: 320px; 
+    height: "full"; 
     background-color: rgba(
       237,
       244,
       255,
       0.6
-    ); /* Background color for sidebar */
+    ); 
     backdrop-filter: blur(150px);
-    transition: all 0.3s ease; /* Smooth transition for open/close */
-    z-index: 1000; /* Higher z-index to ensure it overlays */
+    transition: all 0.3s ease; 
+    z-index: 1000; 
     overflow: hidden;
   }
 
   #sidebar.closed {
-    width: 100px; /* Width for closed sidebar */
-    background-color: transparent; /* Remove background when closed */
+    width: 100px; 
+    background-color: transparent; 
 
     backdrop-filter: unset;
   }
 
-  /* Main content styles */
   .main-content {
-    transition: margin-left 0.3s ease; /* Smooth transition */
-    position: relative; /* Allows z-index to function properly */
-    z-index: 999; /* Lower than sidebar to ensure overlay */
-    filter: none; /* Remove any filter that might be causing blur */
+    transition: margin-left 0.3s ease; 
+    position: relative; 
+    z-index: 999; 
+    filter: none; 
   }
 
-  /* Ensure no blur effect when sidebar is closed */
   #sidebar.closed + .main-content {
-    /* No margin-left change */
-    filter: none; /* Remove any blur or filter effect */
-  }
-
-  /* Other styles remain unchanged... */
-  /* Add your other styles below */
+    filter: none; }
 
   #sidebar-icon {
     position: absolute;
-    top: 50%; /* Center the icon vertically */
-    left: 0; /* Position icon */
+    top: 50%; 
+    left: 0; 
     transform: translateY(-50%);
     padding: 10px;
     cursor: pointer;
@@ -212,13 +206,13 @@
   }
 
   #sidebar.closed #sidebar-icon {
-    left: 0; /* Move icon to the right when sidebar is closed */
+    left: 0;
   }
 
   .logo {
     margin-top: 10px;
     margin-left: 60px;
-    width: 40px; /* Adjust logo size */
+    width: 40px; 
     height: auto;
     transition: all 0.3s ease;
   }
@@ -235,17 +229,14 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    background: transparent; /* Default to transparent */
-    backdrop-filter: none; /* Default to no blur */
-    transition: background 0.3s ease; /* Smooth transition for background */
-  }
-
-  /* Apply background when sidebar is open */
+    background: transparent; 
+    backdrop-filter: none; 
+    transition: background 0.3s ease; }
   #sidebar:not(.closed) .nav-list {
     background: #edf4ffe5; 
     backdrop-filter: blur(
       44.356666564941406px
-    ); /* Apply blur when sidebar is open */
+    ); 
   }
 
   .nav-list li {
@@ -259,7 +250,6 @@
     color: #333333;
   }
 
-  /* Hide text and submenus when sidebar is closed */
   #sidebar.closed .nav-text,
   #sidebar.closed .nav-text1,
   #sidebar.closed .nav-item .sub-nav,
@@ -267,7 +257,6 @@
     display: none;
   }
 
-  /* Adjust padding and margins */
   .nav-list li {
     padding: 8px 0;
     margin: 2px 5px;
@@ -277,25 +266,20 @@
     flex-direction: column;
   }
 
-  /* Make other elements responsive */
   .main-content {
-    transition: margin-left 0.3s ease; /* Smooth transition */
-    position: relative; /* Allows z-index to function properly */
-    z-index: 999; /* Lower than sidebar to ensure overlay */
+    transition: margin-left 0.3s ease; 
+    position: relative; 
+    z-index: 999; 
   }
 
-  /* No margin-left change for main content */
   .sidebar:not(.closed) + .main-content {
-    /* No margin-left change */
   }
 
   .sidebar.closed + .main-content {
-    /* No margin-left change */
   }
 
   .filter-section {
-    grid-template-columns: 1fr; /* Full width for filters */
-  }
+    grid-template-columns: 1fr;}
 
   .profile {
     flex-direction: row;
@@ -303,15 +287,15 @@
   }
 
   .profile i {
-    font-size: 20px; /* Adjust icon size */
+    font-size: 20px; 
   }
 
   .profile span {
-    font-size: 12px; /* Adjust text size */
+    font-size: 12px; 
   }
 
   .icon-circle i {
-    font-size: 16px; /* Adjust circle icon size */
+    font-size: 16px; 
   }
 
   .sidebar.closed .icon,
@@ -321,7 +305,7 @@
   }
 
   .sidebar.closed .logo {
-    display: block; /* Ensure logo is visible */
+    display: block; 
   }
 
   .sidebar-header {
@@ -335,20 +319,19 @@
     display: block;
     margin-left: 10px;
     margin-top: 10px;
-    color: white; /* Color of logo text */
+    color: white; 
   }
 
   #sidebar.closed .logo-text {
-    display: none; /* Hide logo-text when sidebar is closed */
+    display: none;
   }
 
-  /* Adjust profile section styles */
   .profile i {
-    font-size: 18px; /* Profile icon size */
+    font-size: 18px; 
   }
 
   .profile span {
-    font-size: 10px; /* Profile text size */
+    font-size: 10px;
   }
 
   #sidebar-icon {
@@ -364,7 +347,7 @@
   .sidebar:not(.closed) #sidebar-icon {
     border-radius: 10%;
     right: 10px;
-    background-color: blue;
+    
   }
   .breadcrumb-section {
     display: flex;
@@ -379,7 +362,7 @@
     align-items: center;
     font-size: 14px;
     color: #333;
-    justify-content: flex-start; /* Ensures left alignment */
+    justify-content: flex-start; 
   }
 
   .internal {
@@ -406,7 +389,7 @@
   }
   .popup {
     display: none;
-    position: fixed; /* Changed from absolute to fixed */
+    position: fixed; 
     left: 0;
     top: 0;
     width: 100%;
@@ -418,10 +401,10 @@
   }
 
   .popup-content {
-    position: absolute; /* Added position absolute */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-100%, -20%); /* Perfect centering */
+    position: absolute; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-100%, -20%);
     background-color: #edf4ff;
     border-radius: 20px;
     display: flex;
@@ -446,10 +429,10 @@
 
   .profile-popup {
     display: none;
-    position: fixed; /* Changed from absolute to fixed */
-    top: 50%; /* Center vertically */
-    left: 0; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
+    position: fixed; 
+    top: 50%; 
+    left: 0; 
+    transform: translate(-50%, -50%); 
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -461,10 +444,10 @@
   }
 
   .user-popup {
-    position: fixed; /* Changed from absolute to fixed */
-    top: 50%; /* Center vertically */
-    left: 0; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
+    position: fixed; 
+    top: 50%; 
+    left: 0; 
+    transform: translate(-50%, -50%);
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -476,7 +459,6 @@
     display: block;
   }
 
-  /* Rest of your styles remain the same */
   .popup-item {
     display: flex;
     align-items: center;
@@ -501,24 +483,24 @@
   }
   .ffff {
     display: flex;
-    align-items: center; /* Vertically center align */
-    justify-content: space-between; /* Add space between Master text and icon */
+    align-items: center; 
+    justify-content: space-between; /
   }
 
   .nav-texts {
-    margin-left: 20px; /* Add some margin to the right of the text */
-    color: #333333; /* Ensure the text color looks sharp */
-    font-size: 14px; /* Adjust font size if necessary */
+    margin-left: 20px; 
+    color: #333333; 
+    font-size: 14px; 
   }
 
   .nav-text133 {
-    width: 15px; /* Adjust width of the icon */
-    height: 15px; /* Adjust height of the icon */
-    margin-left: 207px; /* Align the icon to the right */
+    width: 15px; 
+    height: 15px;
+    margin-left: 207px; 
   }
   .nav-text1 {
-    width: 15px; /* Adjust width of the icon */
-    height: 15px; /* Adjust height of the icon */
+    width: 15px; 
+    height: 15px;
   }
   #master.active .ffff {
     height: 40px;
@@ -530,7 +512,7 @@
 }
 @media (min-width: 1440px) {
   .container2 {
-    height: 850px;
+    height: 870px;
   }
 }
 @media (min-width: 1920px) {
@@ -598,12 +580,12 @@
     font-size: 18px;
   }
   .status2-content1 input[type="radio"] {
-    appearance: none; /* Remove default radio button */
-    width: 25px; /* Adjust the size */
-    height: 25px; /* Adjust the size */
-    border-radius: 50%; /* Make it circular */
-    border: 2px solid white; /* White border */
-    outline: none; /* Remove the focus outline that causes blur */
+    appearance: none;
+    width: 25px; 
+    height: 25px; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    outline: none; 
     margin-right: 7px;
     background-color: transparent;
     cursor: pointer;
@@ -611,12 +593,12 @@
     margin-top: 14.5px;
   }
   .status2-content2 input[type="radio"] {
-    appearance: none; /* Remove default radio button */
-    width: 25px; /* Adjust the size */
-    height: 25px; /* Adjust the size */
-    border-radius: 50%; /* Make it circular */
-    border: 2px solid white; /* White border */
-    outline: none; /* Remove the focus outline that causes blur */
+    appearance: none; 
+    width: 25px; 
+    height: 25px; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    outline: none;
     margin-right: 7px;
     background-color: transparent;
     cursor: pointer;
@@ -625,8 +607,8 @@
   }
   .status2-content1 input[type="radio"]:checked::before {
     content: "";
-    width: 10px; /* Inner circle size */
-    height: 10px; /* Inner circle size */
+    width: 10px; 
+    height: 10px; 
     background-color: white;
     position: absolute;
     top: 50%;
@@ -636,8 +618,8 @@
   }
   .status2-content2 input[type="radio"]:checked::before {
     content: "";
-    width: 10px; /* Inner circle size */
-    height: 10px; /* Inner circle size */
+    width: 10px; 
+    height: 10px;
     background-color: white;
     position: absolute;
     top: 50%;
@@ -720,10 +702,7 @@
     border-radius: 10px 10px 10px 10px;
   }
 
-  /* .container2 {
-    width: 300px;
-    
-  } */
+
   .header {
     flex-flow: column;
   }
@@ -782,8 +761,7 @@
 
   .form {
     margin-bottom: 20px;
-    /* display: flex;
-    flex-flow: column; */
+    
     padding: 11px;
   }
   .row {
@@ -855,12 +833,12 @@
     display: none;
   }
   .status2-content1 input[type="radio"] {
-    appearance: none; /* Remove default radio button */
-    width: 20px; /* Adjust the size */
-    height: 20px; /* Adjust the size */
-    border-radius: 50%; /* Make it circular */
-    border: 2px solid white; /* White border */
-    outline: none; /* Remove the focus outline that causes blur */
+    appearance: none; 
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    outline: none; 
     margin-right: 7px;
     background-color: transparent;
     cursor: pointer;
@@ -868,12 +846,12 @@
     margin-top: 20px;
   }
   .status2-content2 input[type="radio"] {
-    appearance: none; /* Remove default radio button */
-    width: 20px; /* Adjust the size */
-    height: 20px; /* Adjust the size */
-    border-radius: 50%; /* Make it circular */
-    border: 2px solid white; /* White border */
-    outline: none; /* Remove the focus outline that causes blur */
+    appearance: none; 
+    width: 20px;
+    height: 20px; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    outline: none;
     margin-right: 7px;
     background-color: transparent;
     cursor: pointer;
@@ -882,8 +860,8 @@
   }
   .status2-content1 input[type="radio"]:checked::before {
     content: "";
-    width: 10px; /* Inner circle size */
-    height: 10px; /* Inner circle size */
+    width: 10px; 
+    height: 10px; 
     background-color: white;
     position: absolute;
     top: 50%;
@@ -893,8 +871,8 @@
   }
   .status2-content2 input[type="radio"]:checked::before {
     content: "";
-    width: 10px; /* Inner circle size */
-    height: 10px; /* Inner circle size */
+    width: 10px; 
+    height: 10px; 
     background-color: white;
     position: absolute;
     top: 50%;
@@ -917,8 +895,8 @@
   }
   .apply-btnn {
     display: flex;
-    padding: 11px 30px; /* Default padding */
-    font-size: 11px; /* Default font size */
+    padding: 11px 30px; 
+    font-size: 11px;
   }
 
   #apply-button {
@@ -978,13 +956,13 @@
   }
 
   td input[type="radio"] {
-    width: 15px; /* Adjust the size */
-    height: 15px; /* Adjust the size */
+    width: 15px; 
+    height: 15px; 
   }
 
   td input[type="radio"]:checked::before {
-    width: 6px; /* Inner circle size */
-    height: 6px; /* Inner circle size */
+    width: 6px; 
+    height: 6px; 
     top: 51%;
     left: 51%;
   }
@@ -1040,99 +1018,93 @@
   }
 }
 @media (min-width: 344px) and (max-width: 414px) {
-  /* Center the text in the header */
   .header h1 {
     font-size: 14px;
     font-weight: 700;
     font-family: Lato, sans-serif;
-    width: 100%; /* Ensure full width for centering */
-    text-align: center; /* Center the heading text */
+    width: 100%; 
+    text-align: center; 
     padding: 0;
-    margin: 0; /* Remove any margins */
+    margin: 0; 
   }
 
-  /* Center the buttons container */
   .buttons {
     display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 10px; /* Space between buttons */
-    padding: 0; /* Remove extra padding */
-    margin: 0 auto; /* Center the button group */
-  }
+    justify-content: center; 
+    gap: 10px; 
+    padding: 0; 
+    margin: 0 auto; }
 
-  /* Style the buttons, ensure text inside is centered */
   .retrieve-btn,
   .download-btn,
   .reset-btn {
-    text-align: center; /* Center text inside buttons */
-    padding: 8px 12px; /* Adjust padding for buttons */
-    display: inline-block; /* Keep the buttons inline and centered */
-    margin: 0; /* Ensure no extra margins */
-    flex: 0; /* Prevent the buttons from expanding */
+    text-align: center; 
+    padding: 8px 12px; 
+    display: inline-block; 
+    margin: 0; 
+    flex: 0; 
     margin-top: 20px;
   }
   .filterrr {
-    max-width: 100%; /* Ensure the image does not exceed its container's width */
-    width: 300px; /* Set an initial width */
-    display: block; /* Set the image as a block-level element */
-    margin: 0 auto 20px; /* Center the image with equal left and right margins, and add bottom margin */
-    padding: 0; /* Remove extra padding if not needed */
+    max-width: 100%; 
+    width: 300px;
+    display: block; 
+    margin: 0 auto 20px; 
+    padding: 0; 
   }
 
   .footerresponsive {
     display: flex;
-    justify-content: center; /* Center all buttons horizontally */
-    align-items: center; /* Vertically center buttons if necessary */
-    gap: 10px; /* Space between the buttons */
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
     margin-top: 10px;
     padding: 0;
   }
 
-  /* Style for buttons to ensure proper centering */
   .footerresponsive .save-btn,
   .footerresponsive .confirm-btn,
   .footerresponsive .other-btn {
-    padding: 8px 12px; /* Adjust padding for the buttons */
-    text-align: center; /* Ensure text inside the buttons is centered */
-    flex: 0 1 auto; /* Allow buttons to resize properly without stretching */
+    padding: 8px 12px; 
+    text-align: center; 
+    flex: 0 1 auto; 
   }
 }
 
-/* For 414px and above if needed */
 @media (min-width: 414px) {
   .header h1 {
     font-size: 14px;
     font-weight: 700;
     font-family: Lato, sans-serif;
-    width: 100%; /* Ensure full width for centering */
-    text-align: center; /* Center the heading text */
+    width: 100%; 
+    text-align: center; 
     padding: 0;
-    margin: 0; /* Remove any margins */
+    margin: 0;
   }
 
   .buttons {
     display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 10px; /* Space between buttons */
-    padding: 0; /* Remove extra padding */
-    margin: 0 auto; /* Center the button group */
+    justify-content: center; 
+    gap: 10px; 
+    padding: 0; 
+    margin: 0 auto; 
   }
   .retrieve-btn,
   .download-btn,
   .reset-btn {
-    text-align: center; /* Center text inside buttons */
-    padding: 8px 12px; /* Adjust padding for buttons */
-    display: inline-block; /* Keep the buttons inline and centered */
-    margin: 0; /* Ensure no extra margins */
-    flex: 0; /* Prevent the buttons from expanding */
+    text-align: center; 
+    padding: 8px 12px; 
+    display: inline-block; 
+    margin: 0; 
+    flex: 0; 
     margin-top: 20px;
   }
   .filterrr {
-    max-width: 100%; /* Ensure the image does not exceed its container's width */
-    width: 250px; /* Set an initial width */
-    display: block; /* Set the image as a block-level element */
-    margin: 0 auto 20px; /* Center the image with equal left and right margins, and add bottom margin */
-    padding: 0; /* Remove extra padding if not needed */
+    max-width: 100%; 
+    width: 250px; 
+    display: block; 
+    margin: 0 auto 20px; 
+    padding: 0; 
   }
 }
 @media (min-width: 375px) {
@@ -1156,9 +1128,9 @@
     width: 370px;
   }
   .nav-text133 {
-    width: 15px; /* Adjust width of the icon */
-    height: 15px; /* Adjust height of the icon */
-    margin-left: 255px; /* Align the icon to the right */
+    width: 15px; 
+    height: 15px; 
+    margin-left: 255px; 
   }
 
   #master.active .ffff {
@@ -1169,10 +1141,10 @@
     width: 360px;
   }
   .popup-content {
-    position: absolute; /* Added position absolute */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-100%, -20%); /* Perfect centering */
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-100%, -20%); 
     background-color: #edf4ff;
     border-radius: 20px;
     display: flex;
@@ -1192,6 +1164,9 @@
   }
 }
 @media (min-width: 390px) {
+  #sidebar {
+    height: 155vh; 
+  }
   .input-group {
     width: 325px;
   }
@@ -1206,9 +1181,9 @@
     width: 370px;
   }
   .nav-text133 {
-    width: 15px; /* Adjust width of the icon */
-    height: 15px; /* Adjust height of the icon */
-    margin-left: 255px; /* Align the icon to the right */
+    width: 15px; 
+    height: 15px; 
+    margin-left: 255px;
   }
 
   #master.active .ffff {
@@ -1219,10 +1194,10 @@
     width: 360px;
   }
   .popup-content {
-    position: absolute; /* Added position absolute */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-100%, -20%); /* Perfect centering */
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-100%, -20%); 
     background-color: #edf4ff;
     border-radius: 20px;
     display: flex;
@@ -1248,7 +1223,15 @@
     margin-left: 290px;
   }
 }
+@media (min-width: 360px) {
+  #sidebar {
+    height: 150vh;}
+
+}
 @media (min-width: 412px) {
+  #sidebar {
+    height: 125vh; 
+  }
   .input-group {
     width: 345px;
   }
@@ -1269,9 +1252,9 @@
     width: 400px;
   }
   .nav-text133 {
-    width: 15px; /* Adjust width of the icon */
-    height: 15px; /* Adjust height of the icon */
-    margin-left: 285px; /* Align the icon to the right */
+    width: 15px; 
+    height: 15px; 
+    margin-left: 285px; 
   }
 
   #master.active .ffff {
@@ -1283,10 +1266,10 @@
   }
 
   .popup-content {
-    position: absolute; /* Added position absolute */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-100%, -20%); /* Perfect centering */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-100%, -20%); 
     background-color: #edf4ff;
     border-radius: 20px;
     display: flex;
@@ -1303,13 +1286,15 @@
 
 @media (max-width: 768px) {
   .breadcrumb {
-    justify-content: flex-start; /* Ensures left alignment on mobile */
+    justify-content: flex-start; 
   }
   .breadcrumb {
     justify-content: flex-start !important;
     text-align: left !important;
     width: 100%;
   }
+
+
 }
 @media only screen and (max-width: 768px) {
   body,
@@ -1322,6 +1307,9 @@
   }
 }
 @media (min-width: 1440px) {
+  #sidebar{
+    height: 58vh;
+  }
   .icon-row1 {
     display: none;
   }
@@ -1364,12 +1352,12 @@
   #sidebar-icon {
     position: relative;
     top: 97.5%;
-    left: 15px; /* Should move to the left */
+    left: 15px;
     transform: translateY(-50%);
     background-color: white;
     padding: 10px;
     transition: all 0.3s ease;
-    z-index: 1000; /* Ensure it’s on top if needed */
+    z-index: 1000;
 }
 #sidebar-icon {
   left: 15px !important;
@@ -1385,6 +1373,6 @@
   }
 
   .header h1 {
-    text-align: left; /* Align text to the start on desktop */
+    text-align: left; 
   }
 }

@@ -13,11 +13,13 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
+  background: #EDF4FF99;
+
 }
 
 .container {
   display: flex;
-  background-color: rgba(237, 244, 255, 0.6);
+  height: 57%;
   backdrop-filter: blur(150px);
 }
 
@@ -44,7 +46,7 @@ html {
 .sidebar:not(.closed) #sidebar-icon {
   border-radius: 10%;
   left: calc(100% - 40px);
-  background-color: blue;
+ 
 }
 
 .sidebar.closed .logo1,
@@ -485,7 +487,7 @@ color: rgba(51, 51, 51, 1);
 .container2 {
   background-color: white;
   border-radius: 0px 10px 10px 10px;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   height: "full";
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   margin-bottom: 15px;
@@ -550,7 +552,7 @@ color: rgba(51, 51, 51, 1);
   background-color: #f7f7f7;
 }
 #category {
-  background-color:   rgba(255, 255, 255, 0.2); /* Tumcha desired background color */
+  background-color:   rgba(255, 255, 255, 0.2); 
 }
 
 
@@ -660,8 +662,14 @@ td {
 
 .footer {
   text-align: right;
-  margin-bottom: 40px;
+
 }
+.footer {
+  text-align: right;
+  margin-bottom: 20px; 
+}
+
+
 
 footer button {
   margin-left: 10px;
@@ -671,6 +679,7 @@ footer button {
   cursor: pointer;
   font-weight: 700;
   color: #0219e3;
+
   border: #0219e3 solid 1px;
 }
 .save-btn {
@@ -678,6 +687,7 @@ footer button {
     rgba(255, 255, 255, 0.5) 50%,
     rgba(2, 25, 227, 0.5) 100%
   );
+ 
 }
 
 .confirm-btn {
@@ -796,16 +806,14 @@ option {
 .tablewidth {
   width: 100%;
   height: "full";
-  border-collapse: collapse; /* Removes the gap between cells */
+  border-collapse: collapse; 
 
 }
 td input[type="radio"] {
-  appearance: none; /* Remove default radio button */
-  width: 25px; /* Adjust the size */
-  height: 25px; /* Adjust the size */
-  border-radius: 50%; /* Make it circular */
-  /* border: 2px solid white; White border */
-   /* Remove the focus outline that causes blur */
+  appearance: none; 
+  width: 25px; 
+  height: 25px; 
+  border-radius: 50%; 
   margin-right: 7px;
   background-color: white;
   cursor: pointer;
@@ -815,8 +823,8 @@ td input[type="radio"] {
 }
 td input[type="radio"]:checked::before {
   content: "";
-  width: 12px; /* Inner circle size */
-  height: 12px; /* Inner circle size */
+  width: 12px; 
+  height: 12px; 
   background-color: red;
   position: absolute;
   top: 50%;
@@ -941,12 +949,12 @@ td input[type="radio"]:checked::before {
   display: none;
 }
 .status2-content1 input[type="radio"] {
-  appearance: none; /* Remove default radio button */
-  width: 20px; /* Adjust the size */
-  height: 20px; /* Adjust the size */
-  border-radius: 50%; /* Make it circular */
-  border: 2px solid white; /* White border */
-  outline: none; /* Remove the focus outline that causes blur */
+  appearance: none; 
+  width: 20px; 
+  height: 20px; 
+  border-radius: 50%; 
+  border: 2px solid white; 
+  outline: none; 
   margin-right: 7px;
   background-color: transparent;
   cursor: pointer;
@@ -955,12 +963,12 @@ td input[type="radio"]:checked::before {
 }
 
 .status2-content2 input[type="radio"] {
-  appearance: none; /* Remove default radio button */
-  width: 20px;      /* Adjust the size */
-  height: 20px;     /* Adjust the size */
-  border-radius: 50%; /* Make it circular */
-  border: 2px solid white; /* White border */
-  outline: none; /* Remove the focus outline that causes blur */
+  appearance: none; 
+  width: 20px;      
+  height: 20px;    
+  border-radius: 50%; 
+  border: 2px solid white; 
+  outline: none; 
   margin-right: 7px;
   background-color: transparent;
   cursor: pointer;
@@ -969,8 +977,8 @@ td input[type="radio"]:checked::before {
 }
 .status2-content1 input[type="radio"]:checked::before {
   content: "";
-  width: 8px; /* Inner circle size */
-  height: 8px; /* Inner circle size */
+  width: 8px; 
+  height: 8px; 
   background-color: white;
   position: absolute;
   top: 50%;
@@ -980,8 +988,8 @@ td input[type="radio"]:checked::before {
 }
 .status2-content2 input[type="radio"]:checked::before {
   content: '';
-  width: 8px;  /* Inner circle size */
-  height: 8px; /* Inner circle size */
+  width: 8px;  
+  height: 8px;
   background-color: white;
   position: absolute;
   top: 50%;
@@ -996,23 +1004,23 @@ td input[type="radio"]:checked::before {
   background: linear-gradient(90deg, hsl(308, 53%, 82%), #eeb5e0);
 }
 .content {
-  display: none; /* Hide all content sections by default */
+  display: none;
 }
 
 .content.active {
-  display: block; /* Show only the active content */
+  display: block;
 }
 .content {
-  display: none; /* Hide all content sections by default */
+  display: none; 
   height: 100%;
 }
 
 .content.active {
-  display: block; /* Show only the active content */
+  display: block;
 }
 .tab.active {
-  background-color: white; /* White background for active tab */
-  color: black; /* Optional: Adjust text color */
+  background-color: white; 
+  color: black; 
 }
 
 .tab {
@@ -1031,11 +1039,11 @@ td input[type="radio"]:checked::before {
 
 
 .content {
-  display: none; /* Hide all content by default */
+  display: none; 
 }
 
 .content.active {
-  display: block; /* Show active content */
+  display: block; 
 }
 th {
   font-size: 12px;
@@ -1054,7 +1062,7 @@ div[style*="overflow"] {
   z-index: 999;
   padding: 20px;
   padding-top: 50px;
-  display: flex; /* Important: Hide by default */
+  display: flex; 
 }
 
 #filter-button{
@@ -1065,11 +1073,11 @@ display: none;
 }
 
 .content {
-  display: none; /* Hide all content by default */
+  display: none; 
 }
 
 .content.active {
-  display: block; /* Show active content */
+  display: block; 
 }
 .icon-row1{
   display: none;
@@ -1096,10 +1104,9 @@ display: none;
   display: none;
 }
 #sidebar.closed {
-  transform: translateX(-10%); /* Move sidebar out of view */
-  transition: none; /* Remove animation during initial load */
+  transform: translateX(-10%); 
+  transition: none; 
 }
-
 
 
 

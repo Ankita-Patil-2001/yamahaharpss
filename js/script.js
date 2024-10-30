@@ -16,14 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to set sidebar icon position on load
   function setInitialSidebarIconPosition() {
-    sidebar.classList.add("closed"); // Ensure sidebar starts closed
-    sidebarIcon.style.left = "20px"; // Ensure icon is always on the left
-    sidebarIcon.style.right = "auto"; // Reset right positioning
+    sidebar.classList.toggle("closed");
 
     if (sidebar.classList.contains("closed")) {
-      sidebarIcon.style.backgroundColor = "white"; // Set background for closed state
+      sidebarIcon.style.left = "8px"; // Keep icon on the left
+      sidebarIcon.style.right = "auto"; // Reset right positioning
+      sidebarIcon.style.backgroundColor = "white"; // Only icon background for closed state
     } else {
-      sidebarIcon.style.backgroundColor = "blue"; // Set background for open state
+      sidebarIcon.style.left = "8px"; // Always ensure it stays on the left
+      sidebarIcon.style.right = "auto"; // Reset right
+      sidebarIcon.style.backgroundColor = "blue"; // Only icon background for open state
     }
   }
 
@@ -39,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
       sidebarIcon.style.right = "auto"; // Reset right positioning
       sidebarIcon.style.backgroundColor = "white"; // Background for closed state
     } else {
-      sidebarIcon.style.left = "8px"; // Always ensure it stays on the left
+      sidebarIcon.style.left = "5px"; // Always ensure it stays on the left
       sidebarIcon.style.right = "auto"; // Reset right
-      sidebarIcon.style.backgroundColor = "blue"; // Blue background for open state
+      sidebarIcon.style.backgroundColor = "white"; // Blue background for open state
     }
   }
 
